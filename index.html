@@ -2,15 +2,100 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Our Pair Website</title>
-</head>
-<body>
-  <h1>Welcome to Our Website</h1>
-  <p>This website was built using GitHub workflow.</p>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mind Reader 3000</title>
 
-  <nav>
-    <a href="index.html">Home</a> |
-    <a href="about.html">About</a>
-  </nav>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 15px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px;
+      width: 100%;
+      font-size: 16px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #2c7a2c;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>🔮 Mind Reader 3000</h1>
+    <p>
+      Think of a number in your head.<br>
+      When you’re ready, type it below.
+    </p>
+
+    <input type="number" id="numberInput" placeholder="Enter your number">
+
+    <button onclick="readMind()">Read My Mind</button>
+
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    function readMind() {
+      const number = document.getElementById("numberInput").value;
+
+      if (number === "") {
+        document.getElementById("result").textContent =
+          "🤔 I can't read your mind if you don't type anything!";
+        return;
+      }
+
+      document.getElementById("result").textContent =
+        "✨ I knew it! You're thinking of the number " + number + "!";
+    }
+  </script>
+
 </body>
 </html>
+
